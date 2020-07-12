@@ -2,7 +2,7 @@ import { AstNode, AstNodeType } from './parser';
 import traverser from './traverser';
 
 /**
- * 转换器
+ * 变压器
  * @param ast 目标语法树
  */
 export default function transformer(ast: AstNode): AstNode {

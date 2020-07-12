@@ -9,7 +9,7 @@ export type Visitor = {
 };
 
 /**
- * 遍历器
+ * 导线机
  * @param ast 抽象语法树
  * @param visitor 访问者
  */

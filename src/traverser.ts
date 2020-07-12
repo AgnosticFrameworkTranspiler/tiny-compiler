@@ -46,7 +46,7 @@ export default function traverser(ast: AstNode, visitor: Visitor) {
     if (methods && methods.exit) {
       methods.exit(node, parent);
     }
-
-    traverseNode(ast);
   }
+
+  traverseNode(ast);
 }

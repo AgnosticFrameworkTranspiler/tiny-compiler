@@ -48,5 +48,5 @@ export default function traverser(ast: AstNode, visitor: Visitor) {
     }
   }
 
-  traverseNode(ast);
+  traverseNode(ast, ast);
 }

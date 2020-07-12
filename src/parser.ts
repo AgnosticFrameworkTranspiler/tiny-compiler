@@ -6,6 +6,7 @@ export enum AstNodeType {
   PROGRAM = 'Program',
   ID = 'Identifier',
   CALL = 'CallExpression',
+  EXP = 'ExpressionStatement',
   NUM = 'NumberLiteral',
   STR = 'StringLiteral',
 }
@@ -17,6 +18,10 @@ export type AstNode = {
   name?: string;
   body?: AstNode[];
   params?: AstNode[];
+  callee?: AstNode;
+  expression?: AstNode;
+  arguments?: AstNode[];
+  _context?: AstNode[];
 };
 
 /**

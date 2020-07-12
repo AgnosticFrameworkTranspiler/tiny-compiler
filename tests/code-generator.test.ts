@@ -1,8 +1,7 @@
-import transformer from '../src/transformer';
-import { AstNode, AstNodeType } from '../src/parser';
 import codeGenerator from '../src/code-generator';
+import { AstNode, AstNodeType } from '../src/parser';
 
-describe(transformer, () => {
+describe(codeGenerator, () => {
   it('should be return "add(2,subtract(4,2));"', () => {
     const ast: AstNode = {
       type: AstNodeType.PROGRAM,
@@ -43,7 +42,7 @@ describe(transformer, () => {
       ],
     };
 
-    const exp = 'add(2,subtract(4,2));';
+    const exp: string = 'add(2,subtract(4,2));';
 
     expect(codeGenerator(ast)).toEqual(exp);
   });
@@ -59,7 +58,7 @@ describe(transformer, () => {
       ],
     };
 
-    const exp = '"hello"';
+    const exp: string = '"hello"';
 
     expect(codeGenerator(ast)).toEqual(exp);
   });

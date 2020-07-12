@@ -3,7 +3,7 @@ import { AstNode, AstNodeType } from '../src/parser';
 import codeGenerator from '../src/code-generator';
 
 describe(transformer, () => {
-  it('should be converted correctly', () => {
+  it('should be return "add(2,subtract(4,2));"', () => {
     const ast: AstNode = {
       type: AstNodeType.PROGRAM,
       body: [
@@ -44,6 +44,22 @@ describe(transformer, () => {
     };
 
     const exp = 'add(2,subtract(4,2));';
+
+    expect(codeGenerator(ast)).toEqual(exp);
+  });
+
+  it('should be return "hello"', () => {
+    const ast: AstNode = {
+      type: AstNodeType.PROGRAM,
+      body: [
+        {
+          type: AstNodeType.STR,
+          value: 'hello',
+        },
+      ],
+    };
+
+    const exp = '"hello"';
 
     expect(codeGenerator(ast)).toEqual(exp);
   });
